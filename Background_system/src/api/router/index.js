@@ -19,7 +19,7 @@ const listRouter = require('./list');
 //用户修改完重新插入数据库
 // const up_us_Router = require('./up_user');
 // 删除商品列表数
-// const del_list_Router = require('./del_list');
+const del_list_Router = require('./del_list');
 // 编辑商品
 // const edit_goods = require('./edit_goods');
 // const edit_txt = require('./edit_txt');
@@ -38,7 +38,7 @@ Router.use('/list', listRouter);
 // Router.use('/up_user', up_us_Router);
 
 // 删除商品列表数路由
-// Router.use('/del_list', del_list_Router);
+Router.use('/del_list', del_list_Router);
 
 // 编辑
 // Router.use('/edit_goods', edit_goods);
