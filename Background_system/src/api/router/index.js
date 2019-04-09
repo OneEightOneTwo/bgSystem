@@ -21,8 +21,8 @@ const listRouter = require('./list');
 // 删除商品列表数
 const del_list_Router = require('./del_list');
 // 编辑商品
-// const edit_goods = require('./edit_goods');
-// const edit_txt = require('./edit_txt');
+const edit_goods = require('./edit_goods');
+const edit_txt = require('./edit_txt');
 
 
 Router.use('/login', loginRouter);
@@ -41,8 +41,8 @@ Router.use('/list', listRouter);
 Router.use('/del_list', del_list_Router);
 
 // 编辑
-// Router.use('/edit_goods', edit_goods);
-// Router.use('/edit_txt', edit_txt);
+Router.use('/edit_goods', edit_goods);
+Router.use('/edit_txt', edit_txt);
 
 
 

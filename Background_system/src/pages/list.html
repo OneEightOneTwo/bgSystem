@@ -30,33 +30,53 @@
         <li class="layui-nav-item"><a href="">退了</a></li>
       </ul>
     </div>
-
     <div class="layui-side layui-bg-black">
       <div class="layui-side-scroll">
-        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-        <ul class="layui-nav layui-nav-tree" lay-filter="test">
-          <li class="layui-nav-item layui-nav-itemed">
-            <a class="" href="javascript:;">商品管理</a>
-            <dl class="layui-nav-child">
-              <dd><a href="javascript:;" >商品列表</a></dd>
-              <dd><a href="javascript:;">商品分类</a></dd>
-              <dd><a href="javascript:;">商品添加</a></dd>
+          <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+          <ul class="layui-nav layui-nav-tree" lay-filter="test">
+              <li class="layui-nav-item layui-nav-itemed">
+                  <a class="" href="javascript:;">商品管理</a>
+                  <dl class="layui-nav-child">
+                      <dd>
+                          <a href="./list.html">商品列表</a>
+                      </dd>
+                      <dd>
+                          <a href="./goods_clsaaify.html">商品分类</a>
+                      </dd>
+                      <dd class="layui-this">
+                          <a href="./goods_add.html">商品添加</a>
+                      </dd>
+                      <dd>
+                          <a href=""></a>
+                      </dd>
+                  </dl>
+              </li>
+              <li class="layui-nav-item">
+                  <a href="javascript:;">用户管理</a>
+                  <dl class="layui-nav-child">
+                      <dd>
+                          <a href="./username_list.html">用户列表</a>
+                      </dd>
+                      <dd>
+                          <a href="./add_name.html">添加用户</a>
+                      </dd>
 
-            </dl>
-          </li>
-          <li class="layui-nav-item">
-            <a href="javascript:;">用户管理</a>
-            <dl class="layui-nav-child">
-              <dd><a href="javascript:;">用户信息</a></dd>
-              <dd><a href="javascript:;">新增用户</a></dd>
+                  </dl>
+              </li>
+              <li class="layui-nav-item">
+                  <a href="javascript:;">订单管理</a>
+                  <dl class="layui-nav-child">
+                      <dd>
+                          <a href="javascript:;">订单信息</a>
+                      </dd>
 
-            </dl>
-          </li>
-          <li class="layui-nav-item"><a href="">云市场</a></li>
-          <li class="layui-nav-item"><a href="">发布商品</a></li>
-        </ul>
+
+                  </dl>
+              </li>
+
+          </ul>
       </div>
-    </div>
+  </div>
     
     <div class="layui-body">
       <!-- 内容主体区域 -->
@@ -91,7 +111,7 @@
                     , page: true//开启分页
                     , cols: [[
                         { type: 'checkbox', fixed: 'left' }
-                        , { field: '_id', title: '#', width: 80, fixed: 'left', unresize: true, sort: true, totalRowText: '合计' }
+                        , { field: '_id', title: '#', width: 214, fixed: 'left', unresize: true, sort: true, totalRowText: '合计' }
                         , { field: 'name', title: '商品名称', width: 180, edit: 'text' }
                         , {
                             field: 'kind', title: '类型', width: 80, edit: 'text'
@@ -101,7 +121,7 @@
                         , { field: 'xPrice', title: '价格(现价)', width: 150, edit: 'text', sort: true }
                         , { field: 'reserve', title: '库存', width: 100 }
                         , { field: 'status', title: '状态', width: 100, sort: true, totalRow: true }
-                        , { field: 'date', title: '添加时间', width: 154 }
+                        , { field: 'date', title: '添加时间', width: 120 }
                         ,
                         , { fixed: 'right', title: '操作', toolbar: '#barDemo', width: 112 }
                     ]]
@@ -175,10 +195,12 @@
 
                         });
                     } else if (layEvent === 'edit') {//点击跳转编辑页面，并带相关id回去给后端，后端接收id查相应信息传到编辑页面渲染
-                        var num = data.id;
+                        var num = data._id;
                         location.href = "goods_edit.html?id=" + num;
 
-
+                        // 传中文参数测试
+                      // var num = data.name;
+                      // location.href = 'goods_edit.html?id=' + num;
                     }
                 });
 
